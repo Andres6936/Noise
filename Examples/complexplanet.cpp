@@ -411,7 +411,7 @@ int main ()
   //
   // This subgroup defines the positions of the terrain types on the planet.
   //
-  // Terrain types include, in order of increasing roughness, plains, hills,
+  // Terrain types Include, in order of increasing roughness, plains, hills,
   // and mountains.
   //
   // This subgroup's output value is based on the output value from the

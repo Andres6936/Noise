@@ -1,45 +1,45 @@
 ADD_LIBRARY(Noise
-        src/noisegen.cpp
-        src/latlon.cpp
+        Source/noisegen.cpp
+        Source/latlon.cpp
 
-        src/module/abs.cpp
-        src/module/billow.cpp
-        src/module/cache.cpp
-        src/module/clamp.cpp
-        src/module/curve.cpp
-        src/module/displace.cpp
-        src/module/invert.cpp
-        src/module/min.cpp
-        src/module/multiply.cpp
-        src/module/power.cpp
-        src/module/rotatepoint.cpp
-        src/module/scalepoint.cpp
-        src/module/spheres.cpp
-        src/module/translatepoint.cpp
-        src/module/voronoi.cpp
-        src/module/add.cpp
-        src/module/blend.cpp
-        src/module/checkerboard.cpp
-        src/module/const.cpp
-        src/module/cylinders.cpp
-        src/module/exponent.cpp
-        src/module/max.cpp
-        src/module/modulebase.cpp
-        src/module/perlin.cpp
-        src/module/ridgedmulti.cpp
-        src/module/scalebias.cpp
-        src/module/select.cpp
-        src/module/terrace.cpp
-        src/module/turbulence.cpp
+        Source/module/abs.cpp
+        Source/module/billow.cpp
+        Source/module/cache.cpp
+        Source/module/clamp.cpp
+        Source/module/curve.cpp
+        Source/module/displace.cpp
+        Source/module/invert.cpp
+        Source/module/min.cpp
+        Source/module/multiply.cpp
+        Source/module/power.cpp
+        Source/module/rotatepoint.cpp
+        Source/module/scalepoint.cpp
+        Source/module/spheres.cpp
+        Source/module/translatepoint.cpp
+        Source/module/voronoi.cpp
+        Source/module/add.cpp
+        Source/module/blend.cpp
+        Source/module/checkerboard.cpp
+        Source/module/const.cpp
+        Source/module/cylinders.cpp
+        Source/module/exponent.cpp
+        Source/module/max.cpp
+        Source/module/modulebase.cpp
+        Source/module/perlin.cpp
+        Source/module/ridgedmulti.cpp
+        Source/module/scalebias.cpp
+        Source/module/select.cpp
+        Source/module/terrace.cpp
+        Source/module/turbulence.cpp
 
-        src/model/cylinder.cpp
-        src/model/line.cpp
-        src/model/plane.cpp
-        src/model/sphere.cpp
+        Source/model/cylinder.cpp
+        Source/model/line.cpp
+        Source/model/plane.cpp
+        Source/model/sphere.cpp
         )
 
 TARGET_INCLUDE_DIRECTORIES(Noise
         PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>
-        $<INSTALL_INTERFACE:/include/>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Include/>
+        $<INSTALL_INTERFACE:/Include/>
         )
