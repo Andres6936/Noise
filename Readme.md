@@ -14,3 +14,9 @@ called noise modules. There are many different types of noise modules.
 Some noise modules can combine or modify the outputs of other noise
 modules in various ways; you can join these modules together to
 generate very complex coherent noise.
+
+Before using libnoise, you may want to learn more about coherent noise. 
+You may also want to learn how coherent noise is generated.
+
+Note: libnoise does not generate images, it only generates coherent-noise 
+values. It is up to the programmer to use these values to generate images.
