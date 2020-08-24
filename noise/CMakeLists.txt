@@ -1,0 +1,45 @@
+ADD_LIBRARY(Noise
+        src/noisegen.cpp
+        src/latlon.cpp
+
+        src/module/abs.cpp
+        src/module/billow.cpp
+        src/module/cache.cpp
+        src/module/clamp.cpp
+        src/module/curve.cpp
+        src/module/displace.cpp
+        src/module/invert.cpp
+        src/module/min.cpp
+        src/module/multiply.cpp
+        src/module/power.cpp
+        src/module/rotatepoint.cpp
+        src/module/scalepoint.cpp
+        src/module/spheres.cpp
+        src/module/translatepoint.cpp
+        src/module/voronoi.cpp
+        src/module/add.cpp
+        src/module/blend.cpp
+        src/module/checkerboard.cpp
+        src/module/const.cpp
+        src/module/cylinders.cpp
+        src/module/exponent.cpp
+        src/module/max.cpp
+        src/module/modulebase.cpp
+        src/module/perlin.cpp
+        src/module/ridgedmulti.cpp
+        src/module/scalebias.cpp
+        src/module/select.cpp
+        src/module/terrace.cpp
+        src/module/turbulence.cpp
+
+        src/model/cylinder.cpp
+        src/model/line.cpp
+        src/model/plane.cpp
+        src/model/sphere.cpp
+        )
+
+TARGET_INCLUDE_DIRECTORIES(Noise
+        PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>
+        $<INSTALL_INTERFACE:/include/>
+        )
