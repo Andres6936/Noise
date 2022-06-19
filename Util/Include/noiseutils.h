@@ -23,10 +23,12 @@
 #ifndef NOISEUTILS_H
 #define NOISEUTILS_H
 
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <string>
 
+#include <Color.hpp>
+#include <GradientPoint.hpp>
 #include <noise/noise.h>
 
 using namespace noise;
@@ -104,69 +106,7 @@ namespace noise
     /// canuckleheads.
     const double DEFAULT_METRES_PER_POINT = DEFAULT_METERS_PER_POINT;
 
-    /// Defines a color.
-    ///
-    /// A color object contains four 8-bit channels: red, green, blue, and an
-    /// alpha (transparency) channel.  Channel values range from 0 to 255.
-    ///
-    /// The alpha channel defines the transparency of the color.  If the alpha
-    /// channel has a value of 0, the color is completely transparent.  If the
-    /// alpha channel has a value of 255, the color is completely opaque.
-    class Color
-    {
 
-      public:
-
-        /// Constructor.
-        Color ()
-        {
-        }
-
-        /// Constructor.
-        ///
-        /// @param r Value of the red channel.
-        /// @param g Value of the green channel.
-        /// @param b Value of the blue channel.
-        /// @param a Value of the alpha (transparency) channel.
-        Color (noise::uint8 r, noise::uint8 g, noise::uint8 b,
-          noise::uint8 a):
-          red (r), green (g), blue (b), alpha (a)
-        {
-        }
-
-        /// Value of the alpha (transparency) channel.
-        noise::uint8 alpha;
-
-        /// Value of the blue channel.
-        noise::uint8 blue;
-
-        /// Value of the green channel.
-        noise::uint8 green;
-
-        /// Value of the red channel.
-        noise::uint8 red;
-
-    };
-
-    /// Defines a point used to build a color gradient.
-    ///
-    /// A color gradient is a list of gradually-changing colors.  A color
-    /// gradient is defined by a list of <i>gradient points</i>.  Each
-    /// gradient point has a position and a color.  In a color gradient, the
-    /// colors between two adjacent gradient points are linearly interpolated.
-    ///
-    /// The ColorGradient class defines a color gradient by a list of these
-    /// objects.
-    struct GradientPoint
-    {
-
-      /// The position of this gradient point.
-      double pos;
-
-      /// The color of this gradient point.
-      Color color;
-
-    };
 
     /// Defines a color gradient.
     ///

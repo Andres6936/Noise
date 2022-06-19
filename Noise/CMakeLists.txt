@@ -38,6 +38,8 @@ ADD_LIBRARY(Noise
         Source/model/sphere.cpp
         )
 
+# Set the compiler mark to C++17
+SET_PROPERTY(TARGET Noise PROPERTY CXX_STANDARD 17)
 TARGET_INCLUDE_DIRECTORIES(Noise
         PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Include/>
