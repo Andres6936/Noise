@@ -1,4 +1,6 @@
-ADD_LIBRARY(Noise.Util noiseutils.cpp)
+ADD_LIBRARY(Noise.Util
+        noiseutils.cpp
+        Source/NoiseMap.cpp)
 
 # Set the compiler mark to C++17
 SET_PROPERTY(TARGET Noise.Util PROPERTY CXX_STANDARD 17)
