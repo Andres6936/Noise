@@ -1,5 +1,6 @@
 ADD_LIBRARY(Noise.Util
         noiseutils.cpp
+        Source/Image.cpp
         Source/NoiseMap.cpp)
 
 # Set the compiler mark to C++17
