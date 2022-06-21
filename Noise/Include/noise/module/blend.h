@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @defgroup selectormodules Selector Modules
-    /// @addtogroup selectormodules
+	/// @defgroup selectormodules Selector Modules
+	/// @addtogroup selectormodules
     /// @{
 
     /// Noise module that outputs a weighted blend of the output values from
@@ -92,18 +89,19 @@ namespace noise
         /// module with an index value of 1.
         const Module& GetControlModule () const
         {
-          if (m_pSourceModule == NULL || m_pSourceModule[2] == NULL) {
-            throw noise::ExceptionNoModule ();
-          }
+			if (m_pSourceModule == nullptr || m_pSourceModule[2] == nullptr)
+			{
+				throw noise::ExceptionNoModule();
+			}
           return *(m_pSourceModule[2]);
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 3;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 3;
+		}
 
-	      virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
         /// Sets the control module.
         ///
@@ -124,10 +122,10 @@ namespace noise
         /// Noise module unless another control module replaces that control
         /// module.
         void SetControlModule (const Module& controlModule)
-        {
-          assert (m_pSourceModule != NULL);
-          m_pSourceModule[2] = &controlModule;
-        }
+		{
+			assert (m_pSourceModule != nullptr);
+			m_pSourceModule[2] = &controlModule;
+		}
 
     };
 
@@ -138,7 +136,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

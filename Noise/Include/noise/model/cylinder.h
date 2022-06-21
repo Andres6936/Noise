@@ -23,25 +23,22 @@
 #ifndef NOISE_MODEL_CYLINDER_H
 #define NOISE_MODEL_CYLINDER_H
 
-#include <assert.h>
-#include <math.h>
-#include <stdlib.h>
+#include <cassert>
+#include <cmath>
+#include <cstdlib>
 #include "../module/modulebase.h"
 
-namespace noise
+namespace noise::model
 {
 
-  namespace model
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @defgroup models Models
+	/// @addtogroup models
+	/// @{
 
-    /// @defgroup models Models
-    /// @addtogroup models
-    /// @{
-
-    /// Model that defines the surface of a cylinder.
+	/// Model that defines the surface of a cylinder.
     ///
     /// @image html modelcylinder.png
     ///
@@ -64,11 +61,11 @@ namespace noise
         /// Constructor.
         Cylinder ();
 
-        /// Constructor
-        ///
-        /// @param module The Noise module that is used to generate the output
-        /// values.
-        Cylinder (const module::Module& module);
+		/// Constructor
+		///
+		/// @param module The Noise module that is used to generate the output
+		/// values.
+		explicit Cylinder(const module::Module& module);
 
         /// Returns the Noise module that is used to generate the output
         /// values.
@@ -77,10 +74,10 @@ namespace noise
         ///
         /// @pre A Noise module was passed to the SetModule() method.
         const module::Module& GetModule () const
-        {
-          assert (m_pModule != NULL);
-          return *m_pModule;
-        }
+		{
+			assert (m_pModule != nullptr);
+			return *m_pModule;
+		}
 
         /// Returns the output value from the Noise module given the
         /// (angle, height) coordinates of the specified input value located
@@ -125,7 +122,5 @@ namespace noise
   /// @}
 
   }
-
-}
 
 #endif

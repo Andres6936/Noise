@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup generatormodules
-    /// @{
+	/// @addtogroup generatormodules
+	/// @{
 
     /// Default frequency for the Noise::module::Billow Noise module.
     const double DEFAULT_BILLOW_FREQUENCY = 1.0;
@@ -157,12 +154,12 @@ namespace noise
           return m_seed;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 0;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 0;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
         /// Sets the frequency of the first octave.
         ///
@@ -271,7 +268,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

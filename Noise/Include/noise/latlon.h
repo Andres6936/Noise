@@ -23,7 +23,7 @@
 #ifndef NOISE_LATLON_H
 #define NOISE_LATLON_H
 
-#include <math.h>
+#include <cmath>
 #include "mathconsts.h"
 
 namespace noise

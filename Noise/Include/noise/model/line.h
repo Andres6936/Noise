@@ -20,25 +20,22 @@
 #ifndef NOISE_MODEL_LINE_H
 #define NOISE_MODEL_LINE_H
 
-#include <assert.h>
-#include <math.h>
-#include <stdlib.h>
+#include <cassert>
+#include <cmath>
+#include <cstdlib>
 #include "../module/modulebase.h"
 
-namespace noise
+namespace noise::model
 {
 
-  namespace model
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup models
+	/// @{
 
-    /// @addtogroup models
-    /// @{
-
-    /// Model that defines the displacement of a line segment.
-    ///
+	/// Model that defines the displacement of a line segment.
+	///
     /// This model returns an output value from a Noise module given the
     /// one-dimensional coordinate of an input value located on a line
     /// segment, which can be used as displacements.
@@ -58,11 +55,11 @@ namespace noise
         /// Constructor.
         Line ();
 
-        /// Constructor
-        ///
-        /// @param module The Noise module that is used to generate the output
-        /// values.
-        Line (const module::Module& module);
+		/// Constructor
+		///
+		/// @param module The Noise module that is used to generate the output
+		/// values.
+		explicit Line(const module::Module& module);
 
         /// Returns a flag indicating whether the output value is to be
         /// attenuated (moved toward 0.0) as the ends of the line segment are
@@ -83,10 +80,10 @@ namespace noise
         ///
         /// @pre A Noise module was passed to the SetModule() method.
         const module::Module& GetModule () const
-        {
-          assert (m_pModule != NULL);
-          return *m_pModule;
-        }
+		{
+			assert (m_pModule != nullptr);
+			return *m_pModule;
+		}
 
         /// Returns the output value from the Noise module given the
         /// one-dimensional coordinate of the specified input value located
@@ -192,7 +189,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

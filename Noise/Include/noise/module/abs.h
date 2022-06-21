@@ -25,20 +25,18 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @defgroup modifiermodules Modifier Modules
-    /// @addtogroup modifiermodules
-    /// @{
+	/// @defgroup modifiermodules Modifier Modules
+	/// @addtogroup modifiermodules
+	/// @{
 
     /// Noise module that outputs the absolute value of the output value from
     /// a source module.
@@ -54,12 +52,12 @@ namespace noise
         /// Constructor.
         Abs ();
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 1;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 1;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
     };
 
@@ -70,7 +68,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

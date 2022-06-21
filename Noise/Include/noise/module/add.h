@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
-    
-    /// @addtogroup modules
-    /// @{
-    
-    /// @defgroup combinermodules Combiner Modules
-    /// @addtogroup combinermodules
+	/// @addtogroup modules
+	/// @{
+
+	/// @defgroup combinermodules Combiner Modules
+	/// @addtogroup combinermodules
     /// @{
     
     /// Noise module that outputs the sum of the two output values from two
@@ -55,12 +52,12 @@ namespace noise
         /// Constructor.
         Add ();
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 2;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 2;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
     };
 
@@ -71,7 +68,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

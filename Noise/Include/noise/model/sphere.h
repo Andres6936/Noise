@@ -23,23 +23,20 @@
 #ifndef NOISE_MODEL_SPHERE_H
 #define NOISE_MODEL_SPHERE_H
 
-#include <assert.h>
+#include <cassert>
 #include "../module/modulebase.h"
 
-namespace noise
+namespace noise::model
 {
 
-  namespace model
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup models
+	/// @{
 
-    /// @addtogroup models
-    /// @{
-    
-    /// Model that defines the surface of a sphere.
-    ///
+	/// Model that defines the surface of a sphere.
+	///
     /// @image html modelsphere.png
     ///
     /// This model returns an output value from a Noise module given the
@@ -62,11 +59,11 @@ namespace noise
         /// Constructor.
         Sphere ();
 
-        /// Constructor
-        ///
-        /// @param module The Noise module that is used to generate the output
-        /// values.
-        Sphere (const module::Module& module);
+		/// Constructor
+		///
+		/// @param module The Noise module that is used to generate the output
+		/// values.
+		explicit Sphere(const module::Module& module);
 
         /// Returns the Noise module that is used to generate the output
         /// values.
@@ -75,10 +72,10 @@ namespace noise
         ///
         /// @pre A Noise module was passed to the SetModule() method.
         const module::Module& GetModule () const
-        {
-          assert (m_pModule != NULL);
-          return *m_pModule;
-        }
+		{
+			assert (m_pModule != nullptr);
+			return *m_pModule;
+		}
 
         /// Returns the output value from the Noise module given the
         /// (latitude, longitude) coordinates of the specified input value
@@ -125,7 +122,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

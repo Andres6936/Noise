@@ -22,23 +22,20 @@
 #ifndef NOISE_MODEL_PLANE_H
 #define NOISE_MODEL_PLANE_H
 
-#include <assert.h>
+#include <cassert>
 #include "../module/modulebase.h"
 
-namespace noise
+namespace noise::model
 {
+	/// @addtogroup libnoise
+	/// @{
 
-  namespace model
-  {
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup models
+	/// @{
 
-    /// @addtogroup models
-    /// @{
-
-    /// Model that defines the surface of a plane.
-    ///
-    /// This model returns an output value from a Noise module given the
+	/// Model that defines the surface of a plane.
+	///
+	/// This model returns an output value from a Noise module given the
     /// coordinates of an input value located on the surface of an ( @a x,
     /// @a z ) plane.
     ///
@@ -58,11 +55,11 @@ namespace noise
         /// Constructor.
         Plane ();
 
-        /// Constructor
-        ///
-        /// @param module The Noise module that is used to generate the output
-        /// values.
-        Plane (const module::Module& module);
+		/// Constructor
+		///
+		/// @param module The Noise module that is used to generate the output
+		/// values.
+		explicit Plane(const module::Module& module);
 
         /// Returns the Noise module that is used to generate the output
         /// values.
@@ -71,10 +68,10 @@ namespace noise
         ///
         /// @pre A Noise module was passed to the SetModule() method.
         const module::Module& GetModule () const
-        {
-          assert (m_pModule != NULL);
-          return *m_pModule;
-        }
+		{
+			assert (m_pModule != nullptr);
+			return *m_pModule;
+		}
 
         /// Returns the output value from the Noise module given the
         /// ( @a x, @a z ) coordinates of the specified input value located
@@ -115,7 +112,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

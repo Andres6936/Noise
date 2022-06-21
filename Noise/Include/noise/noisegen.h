@@ -23,7 +23,7 @@
 #ifndef NOISE_NOISEGEN_H
 #define NOISE_NOISEGEN_H
 
-#include <math.h>
+#include <cmath>
 #include "basictypes.h"
 
 namespace noise
