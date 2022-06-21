@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup modifiermodules
-    /// @{
+	/// @addtogroup modifiermodules
+	/// @{
 
     /// Default lower bound of the clamping range for the Noise::module::Clamp
     /// Noise module.
@@ -92,10 +89,10 @@ namespace noise
           return m_lowerBound;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 1;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 1;
+		}
 
         /// Returns the upper bound of the clamping range.
         ///
@@ -109,7 +106,7 @@ namespace noise
           return m_upperBound;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
         /// Sets the lower and upper bounds of the clamping range.
         ///
@@ -146,7 +143,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

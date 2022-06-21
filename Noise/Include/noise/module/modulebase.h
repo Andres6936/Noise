@@ -23,27 +23,24 @@
 #ifndef NOISE_MODULEBASE_H
 #define NOISE_MODULEBASE_H
 
-#include <stdlib.h>
-#include <assert.h>
-#include <math.h>
+#include <cstdlib>
+#include <cassert>
+#include <cmath>
 #include "../basictypes.h"
 #include "../exception.h"
 #include "../noisegen.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @defgroup modules Noise Modules
+	/// @addtogroup modules
+	/// @{
 
-    /// @defgroup modules Noise Modules
-    /// @addtogroup modules
-    /// @{
-
-    /// Abstract base class for Noise modules.
+	/// Abstract base class for Noise modules.
     ///
     /// A <i>Noise module</i> is an object that calculates and outputs a value
     /// given a three-dimensional input value.
@@ -225,8 +222,8 @@ namespace noise
 
       public:
 
-        /// Constructor.
-        Module (int sourceModuleCount);
+		/// Constructor.
+		explicit Module(int sourceModuleCount);
 
         /// Destructor.
         virtual ~Module ();
@@ -360,7 +357,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

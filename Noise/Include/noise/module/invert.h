@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup modifiermodules
-    /// @{
+	/// @addtogroup modifiermodules
+	/// @{
 
     /// Noise module that inverts the output value from a source module.
     ///
@@ -53,12 +50,12 @@ namespace noise
         /// Constructor.
         Invert ();
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 1;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 1;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
     };
 
@@ -69,7 +66,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

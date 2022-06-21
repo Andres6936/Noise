@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup modifiermodules
-    /// @{
+	/// @addtogroup modifiermodules
+	/// @{
 
     /// Default exponent for the Noise::module::Exponent Noise module.
     const double DEFAULT_EXPONENT = 1.0;
@@ -78,12 +75,12 @@ namespace noise
           return m_exponent;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 1;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 1;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
         /// Sets the exponent value to apply to the output value from the
         /// source module.
@@ -113,7 +110,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

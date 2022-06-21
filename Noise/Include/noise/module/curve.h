@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
-
-    /// This structure defines a control point.
-    ///
-    /// Control points are used for defining splines.
-    struct ControlPoint
-    {
+	/// This structure defines a control point.
+	///
+	/// Control points are used for defining splines.
+	struct ControlPoint
+	{
 
       /// The input value.
       double inputValue;
@@ -86,8 +83,8 @@ namespace noise
         /// Constructor.
         Curve ();
 
-        /// Destructor.
-        ~Curve ();
+		/// Destructor.
+		~Curve() override;
 
         /// Adds a control point to the curve.
         ///
@@ -130,12 +127,12 @@ namespace noise
           return m_controlPointCount;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 1;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 1;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
       protected:
 
@@ -191,7 +188,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

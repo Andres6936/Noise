@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup generatormodules
-    /// @{
+	/// @addtogroup generatormodules
+	/// @{
 
     /// Default frequency value for the Noise::module::Cylinders Noise module.
     const double DEFAULT_CYLINDERS_FREQUENCY = 1.0;
@@ -91,12 +88,12 @@ namespace noise
           return m_frequency;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 0;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 0;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
         /// Sets the frequenct of the concentric cylinders.
         ///
@@ -123,7 +120,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

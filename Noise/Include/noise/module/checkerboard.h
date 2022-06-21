@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @addtogroup generatormodules
-    /// @{
+	/// @addtogroup generatormodules
+	/// @{
 
     /// Noise module that outputs a checkerboard pattern.
     ///
@@ -59,12 +56,12 @@ namespace noise
         /// Constructor.
         Checkerboard ();
 
-        virtual int GetSourceModuleCount () const
-        {
-        return 0;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 0;
+		}
 
-        virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
     };
 
@@ -75,7 +72,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

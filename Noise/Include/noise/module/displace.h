@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @defgroup transformermodules Transformer Modules
-    /// @addtogroup transformermodules
+	/// @defgroup transformermodules Transformer Modules
+	/// @addtogroup transformermodules
     /// @{
 
     /// Noise module that uses three source modules to displace each
@@ -74,12 +71,12 @@ namespace noise
       /// Constructor.
       Displace ();
 
-      virtual int GetSourceModuleCount () const
-      {
-        return 4;
-      }
+		int GetSourceModuleCount() const override
+		{
+			return 4;
+		}
 
-      virtual double GetValue (double x, double y, double z) const;
+		double GetValue(double x, double y, double z) const override;
 
       /// Returns the @a x displacement module.
       ///
@@ -253,7 +250,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif

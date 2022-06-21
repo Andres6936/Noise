@@ -25,20 +25,17 @@
 
 #include "modulebase.h"
 
-namespace noise
+namespace noise::module
 {
 
-  namespace module
-  {
+	/// @addtogroup libnoise
+	/// @{
 
-    /// @addtogroup libnoise
-    /// @{
+	/// @addtogroup modules
+	/// @{
 
-    /// @addtogroup modules
-    /// @{
-
-    /// @defgroup generatormodules Generator Modules
-    /// @addtogroup generatormodules
+	/// @defgroup generatormodules Generator Modules
+	/// @addtogroup generatormodules
     /// @{
 
     /// Default constant value for the Noise::module::Const Noise module.
@@ -73,15 +70,15 @@ namespace noise
           return m_constValue;
         }
 
-        virtual int GetSourceModuleCount () const
-        {
-          return 0;
-        }
+		int GetSourceModuleCount() const override
+		{
+			return 0;
+		}
 
-        virtual double GetValue (double x, double y, double z) const
-        {
-          return m_constValue;
-        }
+		double GetValue(double x, double y, double z) const override
+		{
+			return m_constValue;
+		}
 
         /// Sets the constant output value for this Noise module.
         ///
@@ -105,7 +102,5 @@ namespace noise
     /// @}
 
   }
-
-}
 
 #endif
