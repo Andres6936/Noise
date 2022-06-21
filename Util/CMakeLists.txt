@@ -1,5 +1,6 @@
 ADD_LIBRARY(Noise.Util
         noiseutils.cpp
+        Source/GradientColor.cpp
         Source/Image.cpp
         Source/NoiseMap.cpp)
 
